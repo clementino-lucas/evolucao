@@ -2,34 +2,51 @@
 
 class Carro {
 
-	function painel($m,$c) {
-		echo "----------------------------<br>";
-		echo "Carro: ".$m."<br>";
-		echo "Cor: ".$c."<br>";
-		echo "----------------------------<br>";
+	function painel($m,$c,$f,$a,$ma,$t,$v) {
+		echo "<div class='container-fluid'>";
+		echo "----------------------------------------------------------------------<br>";
+		echo "Modelo: ".$m."<br>"." - Cor: ".$c." - Fabricante: ".$f." - Ano: ".$a."<br>";
+		echo "Marcha: ".$ma." - Tanque: ".$t." - Velocidade: ".$v."<br>";
+		echo "----------------------------------------------------------------------<br>";
+		echo "</div>";
 	}
+	function ligar($ma,$t,$v) {
+		if($t > 0 && $v == 0 && $ma = "N") {
+			echo "<h3>Carro ligado.</h3><br>";
+		} else {
+			if($t == 0) {
+			}
+		}
 
 }
 
-//$modelo = $_POST['modelo'];
-//$cor = $_POST['cor'];
 $acao = $_POST['acao'];
-
 session_start();
-
 $carro = new Carro();
-function acao() {
 
-}
 switch($acao) {
-	case "0":
+	case 0:
 		echo "<h1>Selecione uma ação</h1>";
 		$_SESSION['modelo'] = $_POST['modelo'];
 		$_SESSION['cor'] = $_POST['cor'];
+		$_SESSION['fabricante'] = $_POST['fabricante'];
+		$_SESSION['ano'] = $_POST['ano'];
+		$_SESSION['marcha'] = $_POST['marcha'];
+		$_SESSION['tanque'] = $_POST['tanque'];
+		$_SESSION['marchaAtual'] = "N";
+		$_SESSION['combMax'] = 0;
+		$_SESSION['velocidade'] = 0;
+		$carro->painel($_SESSION['modelo'],$_SESSION['cor'],$_SESSION['fabricante'],$_SESSION['ano'],$_SESSION['marcha'],$_SESSION['tanque'],$_SESSION['velocidade']);
+		echo "<div class=containeir-fluid>";
+		echo "<h1>Selecione uma ação</h1>";
+		echo "</div>";
 		break;
-	case "1":
-		$carro->painel($_SESSION['modelo'],$_SESSION['cor']);
+	case 1:
+		$carro->ligar($_SESSION['marchaAtual'],$_SESSION['combAtual'],$_SESSION['velocidade']);
+		$carro->painel($_SESSION['modelo'],$_SESSION['cor'],$_SESSION['fabricante'],$_SESSION['ano'],$_SESSION['marcha'],$_SESSION['tanque'],$_SESSION['velocidade']);
 		break;
+	case 7:
+		
 }
 
  ?>

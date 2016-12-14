@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Desafio Polimorfismo</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<form method="post" action="desafio.php">
+						<input type="hidden" name='acao' value="0">
+						<h1>Escolhendo o carro</h1>
+						<div class="col-sm-6">
+							<label>
+								Cor: <input type="text" name="cor">
+							</label>
+							<br>
+							<label>
+								Fabricante: <input type="text" name="fabricante">
+							</label>
+							<br>
+							<label>
+								Marchas: <input type="text" name="marcha">
+							</label>
+							<br>
+							<label>
+								Ano: <input type="text" name="ano">
+							</label>
+							<br>
+							<label>
+								Modelo: <input type="text" name="modelo">
+							</label>
+							<br>
+							<label>
+								Tipo do carro:
+								<select class="form-control" name="tipo" id="importado">
+									<option value="1">Importado</option>
+									<option value="2">Nacional</option>
+								</select>
+							</label>
+							<br>
+							<label>
+								Tamanho do tanque: <input type="text" name="combMax">
+							</label>
+							<br>
+							<input type="submit" value="Criar carro">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
